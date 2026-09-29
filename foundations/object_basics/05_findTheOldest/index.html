@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const people = [
+        {
+            name: "Carly",
+            yearOfBirth: 1942,
+            yearOfDeath: 1970,
+        },
+        {
+            name: "Ray",
+            yearOfBirth: 1962,
+            yearOfDeath: 2011,
+        },
+        {
+            name: "Jane",
+            yearOfBirth: 1912,
+            yearOfDeath: 1941,
+        },
+       ];
+
+        const findTheOldest = function(people) {
+            const peopleAges = people.map((person) => (person.yearOfDeath - person.yearOfBirth));
+            let oldestAge = 0;
+            let index = 0;
+            for (let i = 0; i < peopleAges.length; i++){
+                console.log(peopleAges[i]);
+                if (peopleAges[i]>oldestAge){
+                    oldestAge = peopleAges[i];
+                    index = i;
+                }
+            }
+
+            return people[index].name;
+        };
+
+        console.log(findTheOldest(people));
+
+    </script>
+</body>
+</html>
